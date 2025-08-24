@@ -506,6 +506,17 @@ export const functions: CodeGenFunctions = {
     },
     checkForError: true,
   },
+  SDL_GetRenderTarget: {
+    parameters: {
+      renderer: {
+        type: "SDL_Renderer*",
+      },
+    },
+    result: {
+      type: "SDL_Texture*",
+      nullable: true,
+    },
+  },
   SDL_GetRevision: {
     parameters: {},
     result: {
@@ -1524,7 +1535,7 @@ export const functions: CodeGenFunctions = {
       },
       rect: {
         type: "SDL_Rect*",
-        isNullable: true
+        isNullable: true,
       },
     },
     result: {
@@ -1625,7 +1636,7 @@ export const functions: CodeGenFunctions = {
       },
       texture: {
         type: "SDL_Texture*",
-        isNullable: true
+        isNullable: true,
       },
     },
     result: {

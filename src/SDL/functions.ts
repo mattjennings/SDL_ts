@@ -497,6 +497,16 @@ export function GetRendererInfo(
 }
 GetRendererInfo.symbolName = "SDL_GetRendererInfo";
 
+export function GetRenderTarget(
+  renderer: Pointer<Renderer>,
+): Pointer<Texture> | null {
+  const _result = Platform.fromPlatformPointer(_library.symbols.SDL_GetRenderTarget(
+    Platform.toPlatformPointer(renderer),
+  ) as PlatformPointer<Pointer<Texture>>);
+  return _result;
+}
+GetRenderTarget.symbolName = "SDL_GetRenderTarget";
+
 export function GetRevision(): string {
   const _result = Platform.fromPlatformString(_library.symbols.SDL_GetRevision() as PlatformPointer<unknown>);
   return _result;

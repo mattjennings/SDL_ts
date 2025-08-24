@@ -223,6 +223,12 @@ export const symbols = {
     ],
     result: /* int */ "i32",
   },
+  SDL_GetRenderTarget: {
+    parameters: [
+      /* SDL_Renderer* renderer */ "pointer",
+    ],
+    result: /* SDL_Texture* */ "pointer",
+  },
   SDL_GetRevision: {
     parameters: [],
     result: /* char* */ "pointer",
