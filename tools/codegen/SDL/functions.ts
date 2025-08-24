@@ -1191,9 +1191,11 @@ export const functions: CodeGenFunctions = {
       },
       w: {
         type: "int*",
+        isOutput: true,
       },
       h: {
         type: "int*",
+        isOutput: true,
       },
     },
     result: {

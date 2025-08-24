@@ -1107,9 +1107,9 @@ export function QueryTexture(
   texture: Pointer<Texture>,
   format: PointerLike<Uint32> | null,
   access: PointerLike<int> | null,
-  w: PointerLike<int>,
-  h: PointerLike<int>,
-): int {
+): [int, int] {
+  const w = new Box<int>(int);
+  const h = new Box<int>(int);
   const _result = _library.symbols.SDL_QueryTexture(
     Platform.toPlatformPointer(texture),
     Platform.toPlatformPointer(format),
@@ -1117,7 +1117,7 @@ export function QueryTexture(
     Platform.toPlatformPointer(w),
     Platform.toPlatformPointer(h),
   ) as int;
-  return _result;
+  return [w.value, h.value];
 }
 QueryTexture.symbolName = "SDL_QueryTexture";
 
