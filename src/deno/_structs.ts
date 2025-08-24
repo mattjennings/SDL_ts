@@ -12,14 +12,16 @@ export function denoToPlatformStruct<T extends Struct>(
     if (struct._byteOffset === 0) {
       return struct._data;
     } else {
-      return new Uint8Array(struct._data, struct._byteOffset);
+      return new Uint8Array(struct._data.buffer, struct._byteOffset);
     }
   } else if (hasSizeInBytesProperty(structConstructor)) {
     const view = new DenoPlatformDataView(struct._data as Pointer<T>);
     return view.getArray(structConstructor.SIZE_IN_BYTES, struct._byteOffset);
   }
 
-  throwError(`Unable to convert struct to platform struct in ${denoToPlatformStruct.name}.`);
+  throwError(
+    `Unable to convert struct to platform struct in ${denoToPlatformStruct.name}.`,
+  );
 }
 
 export function denoFromPlatformStruct<T extends Struct>(
