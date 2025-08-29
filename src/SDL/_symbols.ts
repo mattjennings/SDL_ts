@@ -115,6 +115,12 @@ export const symbols = {
     ],
     result: /* SDL_Window* */ "pointer",
   },
+  SDL_CreateSoftwareRenderer: {
+    parameters: [
+      /* SDL_Surface* surface */ "pointer",
+    ],
+    result: /* SDL_Renderer* */ "pointer",
+  },
   SDL_CreateWindowAndRenderer: {
     parameters: [
       /* int width */ "i32",

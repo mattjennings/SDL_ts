@@ -309,6 +309,19 @@ export function CreateWindow(
 }
 CreateWindow.symbolName = "SDL_CreateWindow";
 
+export function CreateSoftwareRenderer(
+  surface: PointerLike<Surface>,
+): Pointer<Renderer> {
+  const _result = Platform.fromPlatformPointer(_library.symbols.SDL_CreateSoftwareRenderer(
+    Platform.toPlatformPointer(surface),
+  ) as PlatformPointer<Pointer<Renderer>>);
+  if (_result === null) {
+    throw new SDLError(GetError());
+  }
+  return _result;
+}
+CreateSoftwareRenderer.symbolName = "SDL_CreateSoftwareRenderer";
+
 export function CreateWindowAndRenderer(
   width: int,
   height: int,

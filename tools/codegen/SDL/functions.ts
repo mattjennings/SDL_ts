@@ -302,6 +302,17 @@ export const functions: CodeGenFunctions = {
     ],
     checkForError: true,
   },
+  SDL_CreateSoftwareRenderer: {
+    parameters: {
+      surface: {
+        type: "SDL_Surface*",
+      },
+    },
+    result: {
+      type: "SDL_Renderer*",
+    },
+    checkForError: true,
+  },
   SDL_CreateWindowAndRenderer: {
     parameters: {
       width: {
