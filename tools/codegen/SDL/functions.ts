@@ -1324,6 +1324,8 @@ export const functions: CodeGenFunctions = {
       },
       center: {
         type: "SDL_Point*",
+
+        isNullable: true,
       },
       flip: {
         type: "SDL_RendererFlip",

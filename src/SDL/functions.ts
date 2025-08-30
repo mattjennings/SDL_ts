@@ -1222,7 +1222,7 @@ export function RenderCopyEx(
   srcrect: PointerLike<Rect>,
   dstrect: PointerLike<Rect>,
   angle: double,
-  center: PointerLike<Point>,
+  center: PointerLike<Point> | null,
   flip: RendererFlip,
 ): int {
   const _result = _library.symbols.SDL_RenderCopyEx(
